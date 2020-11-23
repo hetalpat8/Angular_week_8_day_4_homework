@@ -1,0 +1,21 @@
+<div class="top-bar">
+    <h1>Artist Bio</h1>
+</div>
+
+<div class="total-artist-section">
+    <!--TODO Create conditional color checking for h2 element-->
+    <h2 [ngClass] = "{ 'red': totalArtist < 0, 'green': totalArtist > 0 }">{{ totalArtist }}</h2>
+</div>
+
+<!--Add item Section-->
+
+<section class="add-item-section">
+    <div class="add-item-container">
+        <!--TODO Add Angular Form for adding info -->
+        <app-add-item-form style="padding:20px" (formSubmit) = 'addItem($event)'></app-add-item-form>
+    </div>
+</section>
+
+<hr style="margin-top:0px;">
+<app-artist-bio-list [artistItems] = "artistsItems"(delete) = "deleteItem($event)" (update) = 'updateItem($event)'></app-artist-bio-list>
+

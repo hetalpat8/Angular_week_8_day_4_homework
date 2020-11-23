@@ -1,0 +1,52 @@
+@import '../../main-styles.scss';
+
+.artist-items-section{
+    display: flex;
+    padding: 50px;
+
+    // horizontally and vertically center the Name and expense columns
+    justify-content: center;
+    align-items: center;
+
+    .artist-items-container{
+        display: flex;
+        max-width: 680px;
+        height: 100%;
+        width: 100%;
+
+        .Name-column,.expenses-column{
+            display: flex;
+            flex-direction: column;
+            flex-basis: 0; // Make the columns the same size regardless of their individual content
+            flex-grow: 1; // Make the columns take ALL available space
+
+            h1{
+                font-family: 'Lato';
+                font-size: 24px;
+                font-weight: 900;
+                text-transform: uppercase;
+            }
+
+            // artist items styling here...
+            .artist-items{
+                display: flex;
+                flex-direction: column;
+                margin-top: 20px;
+            }
+        }
+
+        // Individual expense and Name colors
+        .Name-column{
+            margin-right: 35;
+            h1{
+                color: $green;
+            }
+        }
+
+        .expenses-column{
+            h1{
+                color: $red;
+            }
+        }
+    }
+}
